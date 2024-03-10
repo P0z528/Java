@@ -9,7 +9,10 @@ public class Main {
 
        //zadanie1();
        //zadanie2();
-
+       //zadanie3();
+       //zadanie4();
+       //zadanie5();
+        zadanie6();
         }
 
 //ZADANIE 1
@@ -37,15 +40,58 @@ public class Main {
             int a = scanner.nextInt();
 
             if(a%2==0) {
-                System.out.printf(true);
+                System.out.printf(String.valueOf(true));
             }
-
-
-
-
+            else {
+                PrintStream printf = System.out.printf(String.valueOf(false));
+            }
         }
 
+        public static void zadanie4(){
+            System.out.printf("Podaj liczbe: ");
+            int a = scanner.nextInt();
 
+            if(a%3==0 && a%5==0) {
+                System.out.printf(String.valueOf(true));
+            }
+            else {
+                PrintStream printf = System.out.printf(String.valueOf(false));
+            }
+        }
 
+        public static void zadanie5(){
+            System.out.printf("Podaj liczbe: ");
+            int a = scanner.nextInt();
+            int b = 3;
+            double result = Math.pow(a, b);
+
+            System.out.printf("Liczba podniesiona do 3 potegi = "+ result);
+        }
+
+        public static void zadanie6(){
+            System.out.printf("Podaj liczbe: ");
+            int a = scanner.nextInt();
+
+            double result = Math.sqrt(a);
+            System.out.printf("Pierwiastek z liczby "+ a + " = " + result);
+        }
+
+        public static void zadanie7(){
+
+            System.out.println("Podaj dolny zakres:");
+            int a = scanner.nextInt();
+
+            System.out.println("Podaj górny zakres:");
+            int b = scanner.nextInt();
+
+            int x = (int)(Math.random() * (b - a + 1) + a);
+            int y = (int)(Math.random() * (b - a + 1) + a);
+            int z = (int)(Math.random() * (b - a + 1) + a);
+
+            if(x<z){
+                if(y<z){}
+            }
+
+        }
 
     }

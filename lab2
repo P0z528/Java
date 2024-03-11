@@ -1,0 +1,160 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Main {
+static Scanner scanner = new Scanner(System.in);
+
+    public static void main(String[] args) {
+
+        //zadanie1();
+        //zadanie2();
+        //zadanie3();
+        //zadanie4();
+        //zadanie5();
+        //zadanie6();
+    }
+
+
+        public static void zadanie1(){
+
+            System.out.printf("Podaj a:");
+            int a = scanner.nextInt();
+
+            System.out.printf("Podaj b:");
+            int b = scanner.nextInt();
+
+            System.out.printf("Podaj c:");
+            int c = scanner.nextInt();
+
+            int delta = (b*b) - ((4*a)*c);
+
+            if(delta>0){
+                System.out.printf("Delta jest dodatnia czyli ma 2 rozwiązania \n");
+                float x1 = -b-delta/(2*a);
+                float x2 = -b+delta/(2*a);
+
+                System.out.printf("Pierwsze miejsce zerowe to: " + x1 + " natomiast drugie to: " + x2);
+            }
+            else if(delta==0){
+                System.out.printf("Delta jest równa 0. Rownianie ma tylko 1 rozwiazanie\n");
+                float x0 = -b/(2*a);
+                System.out.printf("Miejsce zerowe wynosi: " + x0);
+            }
+            else{
+                System.out.printf("Delta jest ujemna. Równanie nie ma miejsc zerowych");
+            }
+        }
+
+        public static void zadanie2(){
+
+            System.out.printf("Podaj a:");
+            int a = scanner.nextInt();
+
+            System.out.printf("Podaj b:");
+            int b = scanner.nextInt();
+
+            System.out.printf("Podaj c:");
+            int c = scanner.nextInt();
+
+            if(a>0){System.out.printf("Wartość y: " + (2*a));}
+            else if(a==0){System.out.printf("Wartość y: " + 0);}
+            else{System.out.printf("Wartość y: " + (-3*a));}
+
+            if(b>=1){System.out.printf(" Wartość y: " + (b*b));}
+            else{System.out.printf(" Wartość y: " + (b));}
+
+            if(c>2){System.out.printf(" Wartość y: " + (2+c));}
+            else if(c==2){System.out.printf(" Wartość y: " + 8);}
+            else{System.out.printf(" Wartość y: " + (c-4));}
+        }
+
+
+       public static void zadanie3(){
+           System.out.printf("Podaj x:");
+           int x = scanner.nextInt();
+
+           System.out.printf("Podaj y:");
+           int y = scanner.nextInt();
+
+           System.out.printf("Podaj z:");
+           int z = scanner.nextInt();
+
+           int[] numbers = {x, y, z};
+           Arrays.sort(numbers);
+
+           System.out.println("Posortowane liczby: " + Arrays.toString(numbers));
+       }
+
+
+     public static void zadanie4(){
+         System.out.printf("Wpisz true-tak lub false-nie \n");
+
+         System.out.printf("Czy pada deszcz?: ");
+         boolean a = scanner.nextBoolean();
+
+         System.out.printf("Czy jest autobus?: ");
+         boolean b = scanner.nextBoolean();
+
+         if(a == true && b==true){System.out.printf("Weź parasol. Dostaniesz się na uczelnie");}
+         else if(a == true && b!=true){System.out.printf("Nie dostaniesz się na uczelnie");}
+         else if(a!=true && b==true){System.out.printf("Dostaniesz się na uczelnie. Miłego dnia i pieknej pogody.");}
+         else{System.out.printf("Idz se lepiej na nogach. Piekna pogoda wkoncu jest");}
+     }
+
+     public static void zadanie5(){
+         System.out.printf("Wpisz true-tak lub false-nie \n");
+
+         System.out.printf("Czy jest zniżka?: ");
+         boolean a = scanner.nextBoolean();
+
+         System.out.printf("Czy otrzymałeś premie?: ");
+         boolean b = scanner.nextBoolean();
+
+         if(a != true || b==true){System.out.printf("Możesz kupić samochód!. Zniżki na samochód nie ma");}
+         else if(a != true || b!=true){System.out.printf("Zakup samochodu trzeba odłożyć na później. Zniżki na samochód nie ma.");}
+         else if(a==true || b==true){System.out.printf("Możesz kupić samochód.");}
+         else{System.out.printf("Nie kupuj tego szrota, proste.");}
+     }
+
+     public static void zadanie6(){
+        System.out.print("Podaj działanie jakie chcesz wykonać: (+, -, *, /, %) \n");
+        char dzialanie = scanner.next().charAt(0);
+
+        System.out.printf("Podaj 1 liczbe: ");
+        int a = scanner.nextInt();
+
+        System.out.printf("Podaj 2 liczbe: ");
+        int b = scanner.nextInt();
+
+        double wynik = 0;
+
+        switch(dzialanie){
+            case '+':
+                wynik = a+b;
+                break;
+
+            case '-':
+                wynik = a-b;
+                break;
+
+            case '*':
+                wynik = a*b;
+                break;
+
+            case '/':
+                if(b!=0){ wynik = a/b;}
+                else System.out.printf("Nie mozna dzielic przez 0!!!");
+                break;
+
+            case '%':
+                wynik = a%b;
+                break;
+
+            default:
+                System.out.printf("Podałeś zły operator. Spróbuj ponownie.");
+                return;
+        }
+
+        System.out.printf("Twój wynik to: " + wynik);
+     }
+    }

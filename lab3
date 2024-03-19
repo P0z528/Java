@@ -1,0 +1,116 @@
+import java.util.Random;
+import java.util.Scanner;
+
+public class Main {
+
+    static Scanner scanner = new Scanner(System.in);
+
+    public static void main(String[] args) {
+            //zadanie1();
+            //zadanie2();
+            //zadanie3();
+            //zadanie4();
+            //zadanie5();
+        }
+
+    public static void zadanie1(){
+
+        System.out.printf("Podaj liczbe studentow: ");
+        int n = scanner.nextInt();
+
+        int wynik=0;
+        int i = 0;
+
+        while (i < n) {
+            System.out.print("Podaj liczbę punktów dla studenta " + (i + 1) + ": ");
+            int punkty = scanner.nextInt();
+            wynik += punkty;
+            i++;
+        }
+
+        System.out.printf("Średnia punktów wynosi: " + (wynik/n));
+    }
+
+    public static void zadanie2(){
+
+        int i=0;
+
+        int sumau=0;
+        int liczbau=0;
+
+        int sumad=0;
+        int liczbad=0;
+
+        while(i<10){
+
+            System.out.printf("Podaj liczbe: ");
+            int n = scanner.nextInt();
+
+            if(n<0){
+                sumau+=n;
+                i++;
+                liczbau++;
+            }
+            else if(n>=0){
+                sumad+=n;
+                i++;
+                liczbad++;
+            }
+
+        }
+
+        System.out.printf("Suma ujemnych cyfr wynosi: "+ sumau + " jest ich: " + liczbau +"\n");
+        System.out.printf("Suma dodatniych cyfr wynosi: "+ sumad + " jest ich: " + liczbad +"\n");
+
+    }
+
+    public static void zadanie3(){
+
+        System.out.printf("Podaj koncową liczbe ciagu: ");
+        int n = scanner.nextInt();
+
+        int suma = 0;
+        for(int i=0; n>i; n--){
+            if(n%2==0){
+                suma+= n;
+            }
+        }
+        System.out.printf("Suma w ciągu wynosi: " + suma);
+    }
+
+   static Random random = new Random();
+    public static void zadanie4(){
+        int suma = 0;
+
+        System.out.printf("Podaj ilosc liczb do wylosowania: ");
+        int n = scanner.nextInt();
+
+        for(int i=0;i<n; i++){
+            int numer = random.nextInt(56) - 10;
+
+            System.out.printf((i+1)+" wylosowana liczba to: " + numer+ "\n");
+
+            if(numer%2==0){
+                suma+=numer;
+            }
+        }
+        System.out.printf("Suma liczb parzystych to: " + suma);
+    }
+
+    public static void zadanie5(){
+
+        System.out.println("Podaj słowo:");
+        String word = scanner.nextLine();
+
+        String reversedWord = new StringBuilder(word).reverse().toString();
+
+        if (word.equals(reversedWord)) {
+            System.out.println("Podane słowo jest palindromem.");
+        } else {
+            System.out.println("Podane słowo nie jest palindromem.");
+        }
+    }
+
+    }
+
+
